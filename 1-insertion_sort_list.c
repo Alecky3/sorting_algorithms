@@ -1,7 +1,8 @@
+#include "sort.h"
 /**
- * insertion_sort_list - insertion sorts a doubly-linked list
- * @list: address of pointer to head node
- *
+ * insertion_sort_list - sorts a doubly-linked list in ascending order using
+ * 'insertion sort' algorithm
+ * @list: pointer to pointer to head node
  * Return: void
  */
 void insertion_sort_list(listint_t **list)
@@ -19,7 +20,7 @@ void insertion_sort_list(listint_t **list)
 		{
 			if (j->prev->n > j->n)
 			{
-				swap(j->prev, j);
+				swap_node(j->prev, j);
 				if (!j->prev)
 					*list = j;
 				print_list((const listint_t *)*list);
